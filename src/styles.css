@@ -1,0 +1,51 @@
+/* src/styles.css */
+
+/* Base resets and typography */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    color: #fff;
+    text-align: center;
+    padding-top: 30px;
+  }
+  
+  /* Animated gradient for the default (light) theme */
+  body.default-theme {
+    background: linear-gradient(-45deg, #1A2980, #26D0CE, #6a11cb, #2575fc);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+  }
+  
+  @keyframes gradientBG {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  /* Dark theme overrides the gradient with a dark background */
+  body.dark-theme {
+    background-color: #121212; 
+    color: #e4e4e4;
+    transition: background-color 0.4s, color 0.4s;
+  }
+  
+  /* Professional Navbar styling overrides */
+  .navbar-custom {
+    background-color: rgba(0,0,0,0.6); /* a translucent dark overlay for default theme */
+    backdrop-filter: blur(4px);
+  }
+  .navbar-custom.dark {
+    background-color: #222; /* fully dark for dark theme */
+  }
+  
